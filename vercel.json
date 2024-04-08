@@ -1,15 +1,17 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "./server.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "./server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/preview/pages", "dest": "/server.js" },
+    { "src": "/merge", "dest": "/server.js" },
+    { "src": "/preview", "dest": "/server.js" },
+    { "src": "/preview/d", "dest": "/server.js" },
+    { "src": "/static/(.*)", "dest": "/public/$1" },
+    { "src": "/(.*)", "dest": "/server.js" }
+  ]
 }
